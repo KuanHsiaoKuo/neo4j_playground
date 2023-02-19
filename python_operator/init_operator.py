@@ -82,20 +82,27 @@ def bulk_import():
 
 
 def sync_csv_graph(nodes_path, relationships_path):
-    rel_types = {}
+    rel_types = {"contains": Relationship.type("contains")}
     nodes = {}
     process = graph.begin()
     with open(nodes_path, 'r') as nodes_file, open(relationships_path, 'r') as relationships_file:
         nodes_data, relationships_data = list(csv.reader(nodes_file)), list(csv.reader(relationships_file))
-        nodes_keys = nodes_data[0]
-        for node_name, node_type in nodes_data[1:]:
-            node = Node(node_type, name=node_name)
+        node_keys = nodes_data[0]
+        for node in nodes_data[1:]:
+            properties = {node_keys[index]: property_value for index, property_value in enumerate(node)}
+            node = Node(properties['node_type'], **properties)
             process.create(node)
-            nodes[node_name] = node
+            nodes[properties['name']] = (node, properties['node_type'])
+        # Create contains relationship from nodes
+        for node, parent_node in nodes.values():
+            if nodes.get(parent_node):
+                rel = rel_types["contains"](nodes[parent_node][0], node)
+                process.create(rel)
+
         for start_node, end_node, rel_type in relationships_data[1:]:
             if rel_type not in rel_types.keys():
                 rel_types[rel_type] = Relationship.type(rel_type)
-            rel = rel_types[rel_type](nodes[start_node], nodes[end_node])
+            rel = rel_types[rel_type](nodes[start_node][0], nodes[end_node][0])
             process.create(rel)
     graph.commit(process)
 

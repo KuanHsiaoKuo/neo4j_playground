@@ -1,10 +1,83 @@
-name, node_type
-Rust Program, entity
-Module, entity
-Function, entity
-Struct, entity
-Enum, entity
-Trait, entity
-Lifetime, entity
-Macro, entity
-Type, entity
+name,node_type,intro,priority
+Rust,Lang,intro,S
+语言特点,Rust,intro,S
+组织方式,Rust,intro,S
+核心要点,Rust,intro,S
+基本构成,Rust,intro,S
+基础语法,Rust,intro,S
+核心语法,Rust,intro,S
+底层抽象,Rust,intro,S
+Module,组织方式,intro,S
+Function,组织方式,intro,S
+Trait,核心要点,intro,S
+Generics,核心要点,intro,S
+Lifetime,语言特点,intro,S
+Macro,核心要点,intro,S
+Type System,底层抽象,intro,S
+基础数据类型,Type System,intro,S
+复合数据类型,Type System,intro,S
+类型安全,语言特点,intro,S
+零成本抽象,语言特点,intro,S
+语言一致性,语言特点,intro,S
+语言架构,语言特点,intro,S
+概念层次,语言特点,intro,S
+人机合一,语言特点,intro,S
+开源社区,语言特点,intro,S
+代码执行,语言特点,intro,S
+语言规范,语言特点,intro,S
+RFC文档,语言规范,intro,S
+语言参考,语言规范,intro,S
+核心库,基本构成,intro,S
+基础trait,核心库,intro,S
+基本原始类型,核心库,intro,S
+常用功能数据类型,核心库,intro,S
+常用宏,核心库,intro,S
+编译器(rustc),基本构成,intro,S
+标准库,基本构成,intro,S
+各种迭代器,标准库,intro,S
+Option,标准库,intro,S
+Result,标准库,intro,S
+并发,标准库,intro,S
+I/O,标准库,intro,S
+Runtime,标准库,intro,S
+语句,基础语法,intro,S
+表达式,基础语法,intro,S
+let绑定,基础语法,intro,S
+位置表达式,基础语法,intro,S
+值表达式,基础语法,intro,S
+Ownership,核心语法,intro,S
+borrow,核心语法,intro,S
+reference,核心语法,intro,S
+Move,核心语法,intro,S
+Copy,核心语法,intro,S
+Clone,核心语法,intro,S
+智能指针,核心语法,intro,S
+原生指针,核心语法,intro,S
+闭包,核心语法,intro,S
+变量遮蔽,核心语法,intro,S
+函数指针,核心语法,intro,S
+miri,核心语法,intro,S
+CEFE,核心语法,intro,S
+while,流程控制,intro,S
+loop,流程控制,intro,S
+for,流程控制,intro,S
+match,流程控制,intro,S
+if let,流程控制,intro,S
+while let,流程控制,intro,S
+bool,基础数据类型,intro,S
+number,基础数据类型,intro,S
+&str,基础数据类型,intro,S
+str,基础数据类型,intro,S
+string,基础数据类型,intro,S
+vec,基础数据类型,intro,S
+(1..n),基础数据类型,intro,S
+slice,基础数据类型,intro,S
+pointer,基础数据类型,intro,S
+never,基础数据类型,intro,S
+tupple,复合数据类型,intro,S
+enum,复合数据类型,intro,S
+struct,复合数据类型,intro,S
+union,复合数据类型,intro,S
+参数化多态,多态形式,intro,S
+Ad-hoc多态,多态形式,intro,S
+子类型多态,多态形式,intro,S

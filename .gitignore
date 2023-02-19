@@ -1,0 +1,3 @@
+python_operator/project_venv
+neo4j_operator/neo4j_server/*
+*.idea

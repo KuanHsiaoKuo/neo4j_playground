@@ -1,0 +1,9 @@
+start_node_name,end_node_name,relationship_type
+Rust Program,Module,CONTAINS
+Module,Function,CONTAINS
+Module,Struct,CONTAINS
+Module,Enum,CONTAINS
+Module,Trait,CONTAINS
+Function,Lifetime,USES
+Function,Macro,USES
+Struct,Type,HAS_FIELD

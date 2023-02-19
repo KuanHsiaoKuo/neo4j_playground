@@ -1,0 +1,19 @@
+version: "3.4"
+services:
+  neo4j:
+    image: neo4j:5.5.0-community
+    container_name: neo4j_playground
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    restart: always
+    volumes:
+      - ./neo4j_server/data:/data  # 把容器内的数据目录挂载到宿主机的对应目录下
+      - ./neo4j_server/logs:/logs  # 挂载日志目录
+      - ./neo4j_server/conf:/var/lib/neo4j/conf  # 挂载配置目录
+      - ./neo4j_server/import:/var/lib/neo4j/import  # 挂载数据导入目录
+    environment:
+      - NEO4J_AUTH=neo4j/khk123456  # 设定数据库的名字的访问密码
+    deploy:
+      replicas: 1
+    command: ["neo4j", "start"]

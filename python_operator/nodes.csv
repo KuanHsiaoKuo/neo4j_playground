@@ -1,0 +1,10 @@
+name, node_type
+Rust Program, entity
+Module, entity
+Function, entity
+Struct, entity
+Enum, entity
+Trait, entity
+Lifetime, entity
+Macro, entity
+Type, entity
